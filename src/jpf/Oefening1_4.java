@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author marjolein.vancelst
  */
-public class HFSTK2_Oefeningen {
+public class Oefening1_4 {
 
     /**
      * @param args the command line arguments

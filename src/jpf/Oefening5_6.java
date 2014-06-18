@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author marjolein.vancelst
  */
-public class HFSTK3_Oefeningen 
+public class Oefening5_6 
 {
 
     /**
@@ -20,7 +20,7 @@ public class HFSTK3_Oefeningen
     public static void main(String[] args) 
     {
         // TODO code application logic here
-        // Oefening5
+        // Oefening5_6
         int[] getal;
         getal = new int[5];
         int sum = 0;
