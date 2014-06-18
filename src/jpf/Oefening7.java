@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package jpf;
 
 /**
@@ -18,24 +17,17 @@ public class Oefening7 {
     public static void main(String[] args) {
         // TODO code application logic here
         int[] getal;
-        getal = new int[10000];
-        int[] teller = new int[101];
+        getal = new int[100];
 
+        //genereren van 10000 willekeurige getallen
         for (int i = 0; i < 10000; i++) {
-            getal[i] = (int) (Math.random() * 100 + 1);
+            int randGetal = (int) (Math.random() * 100);
+            getal[randGetal] += 1;
         }
 
-        for (int i = 0; i < 101; i++) {
-            teller[i] = 0;
-        }
-        
-        for (int getallen : getal) {
-            teller[getallen]++;
-        }
-        
-        for (int i = 1; i < 101; i++) {
-           System.out.println(i + ": " + teller[i]);
+        for (int i = 0; i != getal.length; i++) {
+            System.out.println("getal " + (i + 1) + " : " + getal[i]);
         }
     }
-    
+
 }

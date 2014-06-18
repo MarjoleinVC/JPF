@@ -33,15 +33,11 @@ public class Oefening5_6
         for (int i = 0; i < 5; i++) 
         {
             getal[i] = (int) (Math.random() * 100 + 1);
-        }
-
-        for (int i : getal) 
-        {
-            sum += i;
+            sum += getal[i];
         }
 
         //float geeft altijd 0 na komma --> float binnen bewerking zetten, anders maak je een float van een int-resultaat
-        float gemiddelde =  ((float)sum / getal.length);
+        float gemiddelde =  (float)sum / getal.length;
 
         System.out.println("De getallen van de array zijn: " + Arrays.toString(getal));
         System.out.println("Som: " + sum);

@@ -19,34 +19,25 @@ public class Oefening8 {
 
         int[] getal;
         getal = new int[100];
-        int i;
 
         //array random vullen
-        for (i = 0; i < 100; i++) {
+        for (int i = 0; i < 100; i++) {
             getal[i] = (int) (Math.random() * 1000 + 1);
         }
 
         //sorteren (insertion sort)
-        for (int outer = 1; outer < 100; outer++) {
-
-            int inner = outer;
-            int wissel = 0;
-
-            while ((inner > 0) && (wissel == 0)) {
-                if (getal[inner - 1] > getal[inner]) {
-                    int temp = getal[inner];
-                    getal[inner] = getal[inner - 1];
-                    getal[inner - 1] = temp;
-                } else {
-                    wissel = 1;
-                }
-                {
-                    inner = inner - 1;
+        for (int i = 0; i < 100; i++) {
+            for (int j = i + 1; j < 100; j++) {
+                if (getal[j] < getal[i]) {
+                    int tempGetal = getal[i];
+                    getal[i] = getal[j];
+                    getal[j] = tempGetal;
                 }
             }
         }
-        for (int k = 0; k < 100; k++) {
-            System.out.println(k + ": " + getal[k]);
+        //tonen resultaat
+        for (int i = 0; i != getal.length; i++) {
+            System.out.println(getal[i]);
         }
     }
 }

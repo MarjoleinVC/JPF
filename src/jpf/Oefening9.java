@@ -18,36 +18,46 @@ public class Oefening9 {
         // TODO code application logic here
 
         int[] getal;
-        getal = new int[6];
-        int i;
-
-        //array random vullen
-        for (i = 0; i < 6; i++) {
-            getal[i] = (int) (Math.random() * 42);
+        getal = new int[7];
+        int aantalGetal = 0;
+        
+        //genereer 7 getallen
+        while (aantalGetal <7)
+        {
+            // genereer een getal
+            int randGetal = (int) (Math.random() * 42 + 1);
+            //test of het getal niet reeds gekozen is
+            boolean dubbel = false;
+            for (int i = 0; i!=getal.length && !dubbel; i++)
+            {
+                if (getal[i] == randGetal)
+                {
+                    dubbel = true;
+                }
+            }
+            //geta&l bewaren indien niet dubbel
+            if (!dubbel)
+            {
+                getal[aantalGetal++] = randGetal;
+            }
         }
 
-        //sorteren (insertion sort)
-        for (int outer = 1; outer < 6; outer++) {
-
-            int inner = outer;
-            int wissel = 0;
-
-            while ((inner > 0) && (wissel == 0)) {
-                if (getal[inner - 1] > getal[inner]) {
-                    int temp = getal[inner];
-                    getal[inner] = getal[inner - 1];
-                    getal[inner - 1] = temp;
-                } else {
-                    wissel = 1;
-                }
-                {
-                    inner = inner - 1;
+        //eerste 6 getallen sorteren
+        for (int i = 0; i != getal.length - 2; i++) {
+            for (int j = i + 1; j != getal.length - 1; j++) {
+                if (getal[j] < getal[i]) {
+                    int tempGetal = getal[i];
+                    getal[i] = getal[j];
+                    getal[j] = tempGetal;
                 }
             }
         }
-        for (int k = 0; k < 6; k++) {
-            System.out.println(k + ": " + getal[k]);
+        System.out.println("De winnende lottogetallen zijn: ");
+        for (int i = 0; i != getal.length - 1; i++) {
+            System.out.println(i + ": " + getal[i]);
         }
+        System.out.println("\nHet reservegetal is: ");
+        System.out.println(getal[getal.length - 1]);
     }
 }
 
