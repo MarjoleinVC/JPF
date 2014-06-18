@@ -16,10 +16,9 @@ public class JPF {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) {// TODO code application logic here
+        // Statements om de bodymassidex (bmi) te berekenen.
         {
-            // Statements om de bodymassidex (bmi) te berekenen.
             float gewicht = 89.9F;
             float lengte = 1.86F;
             float bmi;
@@ -29,8 +28,8 @@ public class JPF {
             System.out.println("Mijn bodymassindex is " + bmi);
         }
 
+        //Nieuwe berekening: lichaamstemperatuur
         {
-            //Nieuwe berekening: lichaamstemperatuur
             float gemLichTempCel = 37.0F;
             float gemLichTempFahr;
             gemLichTempFahr = gemLichTempCel * 9 / 5 + 32;
@@ -38,8 +37,8 @@ public class JPF {
             System.out.println("Gemiddelde lichaamstemperatuur in graden Fahrenheit: " + gemLichTempFahr);
         }
 
+        //Nieuwe berekening: controle btw-nummer
         {
-            //Nieuwe berekening: controle btw-nummer
             int btwNummer = 213252520;
             int deeltal = btwNummer / 100;
             byte rest = (byte) (deeltal % 97);
@@ -48,8 +47,8 @@ public class JPF {
             System.out.println(controle == 97 - rest);
         }
 
+        //Nieuwe berekening: controle rekeningnummer
         {
-            //Nieuwe berekening: controle rekeningnummer
             long rekNr = 737524091952L;
             int delen = (int) (rekNr / 100);
             byte resterend = (byte) (delen % 97);
@@ -58,15 +57,15 @@ public class JPF {
             System.out.println(controle2 == 97 - resterend);
         }
 
+        //user-input oefening
         {
-            //user-input oefening
             System.out.print("Geef een getal: ");
             Scanner sc = new Scanner(System.in);
             int getal = sc.nextInt();
         }
 
+        //hoofdstuk 3.1: nieuwe, grotere array
         {
-            //hoofdstuk 3.1: nieuwe, grotere array
             int[] kleine = new int[6];
             int[] grotere = new int[kleine.length + 1];
             //kopiëer de inhoud van de kleine tabel in de grotere:
@@ -120,7 +119,7 @@ public class JPF {
             }
         }
 
-        //hoofdstuk 4.3.4 breaks en labels
+        //hoofdstuk 4.3.4 breaks en labels: faculteit manier 1
         {
             //declaratie en initialisatie van getallenreeks
             byte[] getallen = {7, 12, 28, 2, 9};
@@ -156,6 +155,77 @@ public class JPF {
 
                 //teller verhogen
                 i++;
+            }
+        }
+
+        //hoofdstuk 4.3.4 breaks en labels: faculteit manier 2
+        {
+            //declaratie en initialisatie van getallenreeks
+            byte[] getallen = {7, 12, 28, 2, 9};
+
+            //declaratie hulpvariabelen
+            int i = 0;
+            int faculteit;
+            long tussenresultaat;
+
+            //lus die array doorloopt
+            while (i++ < getallen.length) {
+
+                //initialisatie hulpvariabelen
+                tussenresultaat = getallen[i - 1];
+                int j = 1;
+
+                //berekening faculteit
+                while (j < getallen[i - 1]) {
+                    tussenresultaat *= j;
+                    if (tussenresultaat > Integer.MAX_VALUE) {
+                        break;
+                    }
+                    j++;
+                }
+
+                //lus verlaten indien overflow
+                if (j < getallen[i - 1]) {
+                    continue;
+                }
+
+                //resultaat tonen
+                faculteit = (int) tussenresultaat;
+                System.out.println("De faculteit van " + getallen[i - 1] + " is " + faculteit);
+            }
+
+        }
+
+        //hoofdstuk 4.3.4 breaks en labels: faculteit manier 3
+        {
+            //declaratie en initiatie van getallenreeks
+            byte[] getallen = {7, 12, 28, 2, 9};
+
+            //declaraite hulpvariabelen
+            int i = 0;
+            int faculteit;
+            long tussenresultaat;
+
+            //lus die de array doorloopt
+            uit:
+            while (i++ < getallen.length) {
+
+                //initialisatie hulpvariabelen
+                tussenresultaat = getallen[i - 1];
+                int j = 1;
+
+                // berekening faculteit
+                while (j < getallen[i - 1]) {
+                    tussenresultaat *= j;
+                    if (tussenresultaat > Integer.MAX_VALUE) {
+                        break uit;
+                    }
+                    j++;
+                }
+
+                //resultaat uitvoeren
+                faculteit = (int) tussenresultaat;
+                System.out.println("De faculteit van " + getallen[i - 1] + " is " + faculteit);
             }
         }
     }
