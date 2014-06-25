@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * @author marjolein.vancelst
  */
-public class VoorbeeldTypeCasten {
+public class VoorbeeldTypeCastenvsGenerics {
 
     /**
      * @param args the command line arguments

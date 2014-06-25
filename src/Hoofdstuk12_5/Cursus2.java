@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Hoofdstuk12_5;
 
 /**
  *
  * @author marjolein.vancelst
  */
-public class Cursus2 implements Comparable {
+public class Cursus2 implements Comparable<Cursus2> {
 
     private int cursusNr;
     private String cursusNaam;
@@ -65,31 +64,29 @@ public class Cursus2 implements Comparable {
         return cursusNr;
     }
 
-    /* @Override
-     public int compareTo(Object o) {
-     //sorteren op cursusnummer
-     Cursus2 c = (Cursus2) o;
-     return cursusNr - c.getCursusNr();
-     }
-     /*/
-    /* @Override
-     public int compareTo(Object o) {
-     //sorteren op cursusnaam
-     Cursus2 c = (Cursus2) o;
-     return cursusNaam.compareTo(c.getCursusNaam());
-     }
-     /*/
-    /*@Override
-     public int compareTo(Object o) {
-     //sorteren op cursusprijs
-     Cursus2 c = (Cursus2) o;
-     return prijs - c.getPrijs();
-     }
-     /*/
     @Override
-    public int compareTo(Object o) {
-        //sorteren op cursusprijs
-        Cursus2 c = (Cursus2) o;
+    public int compareTo(Cursus2 c) {
+        /*//sorteren op cursusnummer
+         if (cursusNR < c.getCursusnr()) {
+         return 1;
+         } else {
+         return 0;
+         }
+
+         //sorteren op cursusnaam         
+         return cursusNaam.compareTo(c.getCursusNaam());
+         }
+
+         //sorteren op cursusprijs: niet consistent met equals()         
+         if (prijs < c.getPrijs()) {
+         return -1;
+         } else if (prijs > c.getPrijs()) {
+         return 1;
+         } else {
+         return 0;
+         }/*/
+
+        //sorteren op cursusprijs: consistent met equals()
         if (this.equals(c)) {
             return 0;
         } else {
