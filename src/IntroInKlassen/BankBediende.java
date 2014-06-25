@@ -84,6 +84,16 @@ public class BankBediende {
         System.out.println("Set van ZichtRekeningen");
         //printRekening(setZichtrek);
         printRekening2(setZichtrek);
+
+        List<String> woorden = new ArrayList<String>();
+        woorden.add("eerste woord");
+        woorden.add("tweede woord");
+        woorden.add("derde woord");
+
+        System.out.println("Collectie van woorden");
+        //printRekening(woorden);
+        //printRekening2(woorden);
+        print(woorden);
     }
 
     public static void printRekening(Collection<Rekening> bank) {
@@ -95,6 +105,12 @@ public class BankBediende {
     public static void printRekening2(Collection<? extends Rekening> bank) {
         for (Rekening r : bank) {
             System.out.println(r);
+        }
+    }
+
+    public static void print(Collection<?> coll) {
+        for (Object obj : coll) {
+            System.out.println(obj);
         }
     }
 }
