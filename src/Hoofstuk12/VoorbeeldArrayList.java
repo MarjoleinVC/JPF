@@ -20,6 +20,11 @@ public class VoorbeeldArrayList {
         List al = new ArrayList();
         vul(al);
         toon(al);
+        
+        System.out.println("Nieuwe elementen");
+        al.add(3, "test");
+        al.add("beer");
+        toon(al);
     }
 
     private static void vul(List lijst) {
