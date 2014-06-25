@@ -16,7 +16,7 @@ public abstract class Rekening {
     protected double saldo;
 
     public Rekening(String rnr) throws RekeningException {
-        isRekNrOk(rnr);
+        //isRekNrOk(rnr);
         rekeningNr = rnr;
         saldo = 0;
     }
