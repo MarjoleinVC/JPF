@@ -5,7 +5,6 @@ package IntroInKlassen;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author marjolein.vancelst
@@ -14,7 +13,7 @@ public class ZichtRekening extends Rekening {
 
     private int maxKrediet;
 
-    public ZichtRekening(String rnr, int bedrag) {
+    public ZichtRekening(String rnr, int bedrag) throws RekeningException {
         super(rnr);
         maxKrediet = bedrag;
     }
@@ -27,9 +26,9 @@ public class ZichtRekening extends Rekening {
             saldo -= bedrag;
         }
     }
-    
+
     @Override //Wanneer saldo opgevraagd wordt (afdrukken + opsturen van rekeninguittreksels) wordt 0.05 EUR aangerekend:
-    public double getSaldo(){
+    public double getSaldo() {
         saldo -= 0.05;
         return saldo;
     }

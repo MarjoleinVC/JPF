@@ -8,7 +8,6 @@ package IntroInKlassen;
 /*
  * SpaarRekening.java
  */
-
 /**
  *
  * @author marjolein.vancelst
@@ -17,7 +16,7 @@ public class SpaarRekening extends Rekening {
 
     private static double intrest;
 
-    public SpaarRekening(String rnr, double intrest) {
+    public SpaarRekening(String rnr, double intrest) throws RekeningException {
         super(rnr);
         this.intrest = intrest;
     }
@@ -31,7 +30,7 @@ public class SpaarRekening extends Rekening {
     }
 
     private double berekenRente() {
-         //nadat saldo in base class Rekening "protected" werd, mag deze code verwijderd worden: double saldo = super.getSaldo();
+        //nadat saldo in base class Rekening "protected" werd, mag deze code verwijderd worden: double saldo = super.getSaldo();
         return saldo * intrest / 100.0;
     }
 
