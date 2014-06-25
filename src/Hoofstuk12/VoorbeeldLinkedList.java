@@ -48,6 +48,26 @@ public class VoorbeeldLinkedList {
         System.out.println();
         System.out.print("\nLinkedList omgekeerd afgedrukt");
         toonVanafIndexOmgekeerd(ll, ll.size());
+        
+        //extra methods van de LinkedList
+        System.out.println("\nExtra methods van de LinkedList");
+        LinkedList llijst = new LinkedList();
+        vul(llijst);
+        
+        System.out.println(llijst.getFirst());
+        System.out.println(llijst.getLast());
+        
+        llijst.addFirst("eerste");
+        llijst.addLast("laatste");
+        
+        System.out.println(llijst.getFirst());
+        System.out.println(llijst.getLast());
+        
+        System.out.println(llijst.removeFirst());
+        System.out.println(llijst.removeLast());
+        
+        System.out.println(llijst.getFirst());
+        System.out.println(llijst.getLast());
     }
 
     private static void vul(List lijst) {
