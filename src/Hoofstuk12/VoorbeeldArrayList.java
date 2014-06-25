@@ -38,4 +38,10 @@ public class VoorbeeldArrayList {
             String woord = (String) lijst.get(i);
             System.out.println(woord);
         }
+
+        System.out.println("*** Met een for-each ***");
+        for (Object obj : lijst) {
+            String woord = (String) obj;
+            System.out.println(woord);
+        }
     }
