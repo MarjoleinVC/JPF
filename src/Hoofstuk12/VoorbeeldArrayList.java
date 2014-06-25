@@ -6,6 +6,7 @@
 package Hoofstuk12;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -39,9 +40,19 @@ public class VoorbeeldArrayList {
             System.out.println(woord);
         }
 
+        System.out.println();
+
         System.out.println("*** Met een for-each ***");
         for (Object obj : lijst) {
             String woord = (String) obj;
+            System.out.println(woord);
+        }
+
+        System.out.println();
+
+        System.out.println("*** Met de iterator ***");
+        for (Iterator i = lijst.iterator(); i.hasNext();) {
+            String woord = (String) i.next();
             System.out.println(woord);
         }
     }
