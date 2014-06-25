@@ -6,6 +6,7 @@
 package Hoofstuk12;
 
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
@@ -19,9 +20,19 @@ public class VoorbeeldTreeSet1 {
      */
     public static void main(String[] args) {
         System.out.println("Set op basis van TreeSet");
-        Set ts = new TreeSet();
+        SortedSet ts = new TreeSet();
         vul(ts);
         toon(ts);
+
+        //Extra methods eigen aan SortedSet toevoegen
+        System.out.println();
+        System.out.println("*** Extra methods ***");
+        System.out.println("Eerste element: " + ts.first());
+        System.out.println("Laatste element: " + ts.last());
+
+        SortedSet ss = ts.subSet("boom", "even");
+        System.out.print("*** Subset van de TreeSet vanaf 'boom' tot 'even'");
+        toon(ss);
     }
 
     private static void vul(Set s) {
@@ -31,7 +42,7 @@ public class VoorbeeldTreeSet1 {
         s.add("dak");
         s.add("citroen");
         s.add("boom");
-        s.add(null);
+        //s.add(null);
         s.add("aap");
     }
 
