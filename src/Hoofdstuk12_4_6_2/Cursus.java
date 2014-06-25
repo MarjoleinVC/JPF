@@ -64,10 +64,26 @@ public class Cursus implements Comparable {
         return cursusNr;
     }
 
+    /* @Override
+     public int compareTo(Object o) {
+     //sorteren op cursusnummer
+     Cursus c = (Cursus) o;
+     return cursusNr - c.getCursusNr();
+     }
+     /*/
+    
+    /* @Override
+     public int compareTo(Object o) {
+     //sorteren op cursusnaam
+     Cursus c = (Cursus) o;
+     return cursusNaam.compareTo(c.getCursusNaam());
+     }
+     /*/
+    
     @Override
     public int compareTo(Object o) {
-        //sorteren op cursusnummer
+        //sorteren op cursusprijs
         Cursus c = (Cursus) o;
-        return cursusNaam.compareTo(c.getCursusNaam());
+        return prijs - c.getPrijs();
     }
 }
