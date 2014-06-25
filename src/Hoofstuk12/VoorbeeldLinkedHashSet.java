@@ -28,8 +28,10 @@ public class VoorbeeldLinkedHashSet {
         s.add("fiets");
         s.add("even");
         s.add("dak");
+        s.add("dak");
         s.add("citroen");
         s.add("boom");
+        s.add("null");
         s.add("aap");
     }
 
@@ -37,7 +39,8 @@ public class VoorbeeldLinkedHashSet {
         System.out.println();
 
         for (Object obj : s) {
-            System.out.println(obj + "\t" + obj.hashCode());
+            //System.out.println(obj + "\t" + obj.hashCode());
+            System.out.println(obj);
         }
     }
 }
