@@ -1,7 +1,5 @@
 package IntroInKlassen;
 
-import java.util.Collection;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -62,11 +60,5 @@ public abstract class Rekening {
         } else {
             throw new RekeningException("Het rekeningnummer is fout (te kort !!", reknr);
         }
-    }
-
-    public static void printRekening(Collection<Rekening> bank) {
-        for (Rekening r : bank) {
-            System.out.println(r);
-        }
-    }
+    }    
 }
