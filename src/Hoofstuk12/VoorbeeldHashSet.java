@@ -28,8 +28,10 @@ public class VoorbeeldHashSet {
         s.add("fiets");
         s.add("even");
         s.add("dak");
+        s.add("dak"); //dubbel element proberen toevoegen
         s.add("citroen");
         s.add("boom");
+        s.add(null); //null element proberen toevoegen
         s.add("aap");
     }
 
@@ -37,7 +39,9 @@ public class VoorbeeldHashSet {
         System.out.println();
 
         for (Object obj : s) {
-            System.out.println(obj + "\t" + obj.hashCode());
+            //Niet mogelijk om hashcode te tonen, want dit geeft problemen bij het null-element.
+            //System.out.println(obj + "\t" + obj.hashCode());
+            System.out.println(obj);
         }
     }
 }
