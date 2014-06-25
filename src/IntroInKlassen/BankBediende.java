@@ -5,8 +5,11 @@ package IntroInKlassen;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import static IntroInKlassen.Rekening.printRekening;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,23 +21,24 @@ public class BankBediende {
     public static void main(String[] args) throws RekeningException {
 
         /*DecimalFormat fmt = new DecimalFormat("#,##0.00");
-         Rekening[] rekeningen = new Rekening[3];
-         try {
-         rekeningen[0] = new SpaarRekening("035-0621094-44", 2.5);
-         rekeningen[1] = new ZichtRekening("784-5879305-64", 1000);
-         rekeningen[2] = new SpaarRekening("001-3456789-01", 5.5);
+        Rekening[] rekeningen = new Rekening[3];
+        try {
+            rekeningen[0] = new SpaarRekening("035-0621094-44", 2.5);
+            rekeningen[1] = new ZichtRekening("784-5879305-64", 1000);
+            rekeningen[2] = new SpaarRekening("001-3456789-01", 5.5);
 
-         rekeningen[0].storten(100.0);
-         rekeningen[1].storten(200.0);
-         rekeningen[1].afhalen(50.0);
-         } catch (RekeningException re) {
-         System.out.println(re.getMessage() + re.getVerkeerdNummer());
-         }
-         for (int i = 0; i != rekeningen.length; i++) {
-         if (rekeningen[i] != null) {
-         System.out.println(rekeningen[i].toString());
-         }
-         }/*/
+            rekeningen[0].storten(100.0);
+            rekeningen[1].storten(200.0);
+            rekeningen[1].afhalen(50.0);
+        } catch (RekeningException re) {
+            System.out.println(re.getMessage() + re.getVerkeerdNummer());
+        }
+        for (int i = 0; i != rekeningen.length; i++) {
+            if (rekeningen[i] != null) {
+                System.out.println(rekeningen[i].toString());
+            }
+        }/*/
+        
         // ------GENERICS: eerste collectie van rekeningen----------------------
         Set<Rekening> setRek = new HashSet<Rekening>();
 
@@ -57,7 +61,21 @@ public class BankBediende {
         for (Rekening rek : setRek) {
             somSaldo += rek.getSaldo();
         }
-
+        System.out.println();
         System.out.println("Totaal saldo: " + somSaldo);
+
+        System.out.println();
+        System.out.println("HashSet van Rekeningen");
+        printRekening(setRek);
+
+        List<Rekening> alRek = new ArrayList<Rekening>();
+        alRek.add(z1);
+        alRek.add(z2);
+        alRek.add(s1);
+        alRek.add(s2);
+
+        System.out.println();
+        System.out.println("ArrayList van Rekeningen");
+        printRekening(alRek);
     }
 }

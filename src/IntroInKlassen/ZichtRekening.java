@@ -32,4 +32,9 @@ public class ZichtRekening extends Rekening {
         saldo -= 0.05;
         return saldo;
     }
+    
+    @Override
+    public String toString() {
+        return super.toString() + ", " + maxKrediet;
+    }
 }
