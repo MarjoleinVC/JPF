@@ -71,7 +71,6 @@ public class Cursus implements Comparable {
      return cursusNr - c.getCursusNr();
      }
      /*/
-    
     /* @Override
      public int compareTo(Object o) {
      //sorteren op cursusnaam
@@ -79,11 +78,21 @@ public class Cursus implements Comparable {
      return cursusNaam.compareTo(c.getCursusNaam());
      }
      /*/
-    
+    /*@Override
+     public int compareTo(Object o) {
+     //sorteren op cursusprijs
+     Cursus c = (Cursus) o;
+     return prijs - c.getPrijs();
+     }
+     /*/
     @Override
     public int compareTo(Object o) {
         //sorteren op cursusprijs
         Cursus c = (Cursus) o;
-        return prijs - c.getPrijs();
+        if (this.equals(c)) {
+            return 0;
+        } else {
+            return prijs == c.getPrijs() ? -1 : prijs - c.getPrijs();
+        }
     }
 }
