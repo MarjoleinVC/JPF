@@ -85,6 +85,7 @@ public class BankBediende {
         //printRekening(setZichtrek);
         printRekening2(setZichtrek);
 
+        System.out.println();
         List<String> woorden = new ArrayList<String>();
         woorden.add("eerste woord");
         woorden.add("tweede woord");
@@ -94,6 +95,12 @@ public class BankBediende {
         //printRekening(woorden);
         //printRekening2(woorden);
         print(woorden);
+        
+        System.out.println();
+        //Alle collections tonen met de procedure print
+        print(setRek);
+        print(alRek);
+        print(setZichtrek);
     }
 
     public static void printRekening(Collection<Rekening> bank) {
