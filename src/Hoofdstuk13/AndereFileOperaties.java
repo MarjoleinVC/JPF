@@ -3,20 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Hoofdstuk13;
 
-/**
- *
- * @author marjolein.vancelst
- */
+import java.io.*;
+
 public class AndereFileOperaties {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        //een allegaartje van fileoperaties 
+        
+        //een nieuwe verwijzing maken naar een map en file 
+        File nieuweMap = new File("c:\\windows");
+        File eenLeegBestand = new File(nieuweMap, "win.ini");
+
+        //testen of de file bestaat 
+        System.out.println(eenLeegBestand.getName() + " exists = " + eenLeegBestand.exists());
+
+        //alfabet.txt uit vorige oefening hernoemen naar alphabet.txt 
+        //in de hoger gelegen map 
+        File alfabetFile = new File(".", "alfabet.txt");
+        File nieuweFile = new File("..", "alphabet.txt");
+        System.out.println("hernoeming gelukt: " + alfabetFile.renameTo(nieuweFile));
+
+        //de file alphabet.txt verwijderen 
+        System.out.println("tekstfile verwijderd: " + nieuweFile.delete());
+        try {
+            File testDir = new File("testdir");
+            File testFile = new File(testDir, "testfile.txt");
+            System.out.println("creatie testfile in testmap gelukt: " + (testDir.mkdir() && testFile.createNewFile()));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
-    
 }
