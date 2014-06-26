@@ -9,13 +9,13 @@ package Hoofdstuk12_5;
  *
  * @author marjolein.vancelst
  */
-public class Cursus2 implements Comparable<Cursus2> {
+public class Cursus implements Comparable<Cursus> {
 
     private int cursusNr;
     private String cursusNaam;
     private int prijs;
 
-    public Cursus2(int cursusNr, String cursusNaam, int prijs) {
+    public Cursus(int cursusNr, String cursusNaam, int prijs) {
         setCursusNr(cursusNr);
         setCursusNaam(cursusNaam);
         this.prijs = prijs;
@@ -52,10 +52,10 @@ public class Cursus2 implements Comparable<Cursus2> {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Cursus2)) {
+        if (!(o instanceof Cursus)) {
             return false;
         }
-        Cursus2 c = (Cursus2) o;
+        Cursus c = (Cursus) o;
         return cursusNr == c.getCursusNr();
     }
 
@@ -65,7 +65,7 @@ public class Cursus2 implements Comparable<Cursus2> {
     }
 
     @Override
-    public int compareTo(Cursus2 c) {
+    public int compareTo(Cursus c) {
         /*//sorteren op cursusnummer
          if (cursusNR < c.getCursusnr()) {
          return 1;

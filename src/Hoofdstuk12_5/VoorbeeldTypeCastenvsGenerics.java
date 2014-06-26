@@ -19,20 +19,20 @@ public class VoorbeeldTypeCastenvsGenerics {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Set<Cursus2> coll = new HashSet<Cursus2>();
+        Set<Cursus> coll = new HashSet<Cursus>();
 
-        coll.add(new Cursus2(5, "Word", 100));
-        coll.add(new Cursus2(3, "Excel", 110));
-        coll.add(new Cursus2(1, "Windows", 90));
+        coll.add(new Cursus(5, "Word", 100));
+        coll.add(new Cursus(3, "Excel", 110));
+        coll.add(new Cursus(1, "Windows", 90));
         //delete: coll.add("test");
-        coll.add(new Cursus2(4, "Access", 120));
-        coll.add(new Cursus2(2, "PowerPoint", 80));
+        coll.add(new Cursus(4, "Access", 120));
+        coll.add(new Cursus(2, "PowerPoint", 80));
 
         int somPrijs = 0;
 
-        Iterator<Cursus2> it = coll.iterator();
+        Iterator<Cursus> it = coll.iterator();
         while (it.hasNext()) {
-            Cursus2 c = it.next();
+            Cursus c = it.next();
             somPrijs += c.getPrijs();
         }
         System.out.println("Som van de prijzen: " + somPrijs);
