@@ -13,7 +13,7 @@ import java.util.TreeSet;
  *
  * @author marjolein.vancelst
  */
-public class VoorbeeldTreeSet1 {
+public class VoorbeeldTreeSet {
 
     /**
      * @param args the command line arguments
