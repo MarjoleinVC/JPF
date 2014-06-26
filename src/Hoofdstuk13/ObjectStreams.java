@@ -44,5 +44,32 @@ public class ObjectStreams {
                 }
             }
         }
+
+        FileInputStream fileLezer = null;
+        ObjectInputStream objLezer = null;
+
+        try {
+            //een niewe fileInputStream en objectInputStrema maken
+            fileLezer = new FileInputStream("werknemers.dat");
+            objLezer = new ObjectInputStream(fileLezer);
+
+            Werknemer[] werknemers = (Werknemer[]) objLezer.readObject();
+            for (Werknemer werknemer : werknemers) {
+                System.out.print(werknemer.getVolledigeNaam());
+                System.out.print(" : ");
+                System.out.println(werknemer.getWedde());
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            //de file sluiten
+            if (obj != null) {
+                try {
+                    obj.close();
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
     }
 }
