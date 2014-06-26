@@ -67,7 +67,7 @@ public class VoorbeeldTreeMapMetcompareTo {
         }/*/
                 
         //**** Eigen class Cursus gebruiken om volgorde van de key aan te tonen: compareTo()
-        Map<Cursus, String> cursussen = new TreeMap<Cursus, String>();
+        TreeMap<Cursus, String> cursussen = new TreeMap<Cursus, String>();
         
         cursussen.put(new Cursus(5, "Word", 100), "Je leert omgaan met een tekstverwerker");
         cursussen.put(new Cursus(3, "Excel", 110), "Je leert omgaan met een spreadsheetprogramma");
@@ -82,6 +82,22 @@ public class VoorbeeldTreeMapMetcompareTo {
             Cursus eenCursus = itCursus.next();
             String infoCursus = cursussen.get(eenCursus);
             System.out.println(eenCursus + " heeft als info: " + infoCursus);
+        }
+        
+        //Extra methods
+        System.out.println();
+        System.out.println("*** Extra methods Cursus***");
+        System.out.println("Eerste key: " + cursussen.firstKey());
+        System.out.println("Laatste key: " + cursussen.lastKey());
+        
+        SortedMap<Cursus, String> cursussenSub = cursussen.subMap(new Cursus(0, "", 90), new Cursus(0, "", 120));
+        
+        System.out.println();
+        System.out.println("*** View van de Key-Value-paren van de submap met prijs tss 90-120 ***");
+        Iterator itSub = cursussenSub.entrySet().iterator();
+        while (itSub.hasNext())
+        {
+            System.out.println(itSub.next());
         }
     }    
 }
