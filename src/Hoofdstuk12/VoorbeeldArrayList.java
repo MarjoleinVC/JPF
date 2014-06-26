@@ -1,78 +1,59 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Hoofstuk12;
+package Hoofdstuk12;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 /**
  *
  * @author marjolein.vancelst
  */
-public class VoorbeeldLinkedList {
+public class VoorbeeldArrayList {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        System.out.println("List op basis van LINKEDLIST");
-
-        List ll = new LinkedList();
-        vul(ll);
-        toon(ll);
+        System.out.println("List op basis van ARRAYLIST");
+        List al = new ArrayList();
+        vul(al);
+        toon(al);
 
         System.out.println();
         System.out.println("Nieuwe elementen");
-        ll.add(3, "test");
-        ll.add("beer");
-        toon(ll);
+        al.add(3, "test");
+        al.add("beer");
+        toon(al);
 
+        //tweede String "ctiroen" vervangen door "tweede citroen"
         System.out.println();
-        //tweede String citroen vervangen door "tweede citroen"
         System.out.println("Element vervangen");
-        ListIterator li = ll.listIterator(6);
-        li.next();
-        li.set((String) "tweede citroen");
-        li.add("kers");
+        try {
+            ListIterator li = al.listIterator(6);
+            li.next();
+            li.set("tweede citroen");
+            li.add("kers");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("element niet gevonden (index out of bound): " + e.getMessage());
+        } catch (NoSuchElementException e) {
+            System.out.println("geen element beschikbaar: " + e.getMessage());
+        }
 
         System.out.println();
-        System.out.print("LinkedList afgedrukt vanaf element 2");
-        toonVanafIndex(ll, 2);
+        System.out.print("ArrayList afgedrukt vanaf element ");
+        toonVanafIndex(al, 2);
 
-        System.out.println();
-        System.out.print("\nLinkedList omgekeerd afgedrukt");
-        toonVanafIndexOmgekeerd(ll, ll.size());
-        
-        //extra methods van de LinkedList
-        System.out.println("\nExtra methods van de LinkedList");
-        LinkedList llijst = new LinkedList();
-        vul(llijst);
-        
-        System.out.println(llijst.getFirst());
-        System.out.println(llijst.getLast());
-        
-        llijst.addFirst("eerste");
-        llijst.addLast("laatste");
-        
-        System.out.println(llijst.getFirst());
-        System.out.println(llijst.getLast());
-        
-        System.out.println(llijst.removeFirst());
-        System.out.println(llijst.removeLast());
-        
-        System.out.println(llijst.getFirst());
-        System.out.println(llijst.getLast());
+        System.out.print("\nArrayList omgekeerd afgedrukt");
+        toonVanafIndexOmgekeerd(al, al.size());
     }
 
     private static void vul(List lijst) {
         lijst.add("fiets");
-        lijst.add("null"); //null-element toegestaan
+        lijst.add(null); //null-element toegestaan
         lijst.add("even");
         lijst.add("dak");
         lijst.add("citroen");
@@ -82,13 +63,14 @@ public class VoorbeeldLinkedList {
     }
 
     private static void toon(List lijst) {
-        System.out.println("*** Met for-statement ***");
+        System.out.println("*** Met een for-statement ***");
         for (int i = 0; i < lijst.size(); i++) {
             String woord = (String) lijst.get(i);
             System.out.println(woord);
         }
 
         System.out.println();
+
         System.out.println("*** Met een for-each ***");
         for (Object obj : lijst) {
             String woord = (String) obj;
@@ -96,6 +78,7 @@ public class VoorbeeldLinkedList {
         }
 
         System.out.println();
+
         System.out.println("*** Met de iterator ***");
         for (Iterator i = lijst.iterator(); i.hasNext();) {
             String woord = (String) i.next();

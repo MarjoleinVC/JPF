@@ -1,4 +1,4 @@
-package Oefening11;
+package Oefeningen;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,9 +10,9 @@ package Oefening11;
  *
  * @author marjolein.vancelst
  */
-public class Getal {
+public class Oefening11 {
 
-    public Getal(int a) {
+    public Oefening11(int a) {
         setX(a);
     }
 

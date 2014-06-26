@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Oefening28;
+package Oefeningen;
 import java.util.*;
 /**
  *
