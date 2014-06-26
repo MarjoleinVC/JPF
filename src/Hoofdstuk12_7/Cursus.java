@@ -5,6 +5,8 @@
  */
 package Hoofdstuk12_7;
 
+import java.util.*;
+
 /**
  *
  * @author marjolein.vancelst
@@ -92,5 +94,15 @@ public class Cursus implements Comparable<Cursus> {
         } else {
             return prijs == c.getPrijs() ? -1 : prijs - c.getPrijs();
         }
+    }
+
+    //public class DalendePrijsComparator implements Comparator<Cursus> wordt anonieme inner class:
+    public static Comparator<Cursus> getDalendePrijsComparator() {
+        return new Comparator<Cursus>() {
+            @Override
+            public int compare(Cursus c1, Cursus c2) {
+                return c2.getPrijs() == c1.getPrijs() ? -1 : c2.getPrijs() - c1.getPrijs();
+            }
+        };
     }
 }

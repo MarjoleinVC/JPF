@@ -43,7 +43,7 @@ public class BasisOefComparator {
             System.out.println(itLanden.next());
         }
 
-        Map<Cursus, String> cursussen = new TreeMap<Cursus, String>(new DalendePrijsComparator());
+        Map<Cursus, String> cursussen = new TreeMap<Cursus, String>(Cursus.getDalendePrijsComparator());
 
         cursussen.put(new Cursus(5, "Word", 100), "Je leert omgaan met een tekstverwerker");
         cursussen.put(new Cursus(3, "Excel", 110), "Je leert omgaan met een spreadsheetprogramma");
