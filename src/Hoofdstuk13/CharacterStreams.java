@@ -12,25 +12,27 @@ public class CharacterStreams {
     public static void main(String[] args) {
         
         FileReader file = null;
+        BufferedReader buffer = null;
 
         //tekstbestand teken per teken inlezen en weergeven op het scherm
         try {
             //een nieuwe file aanmaken 
             file = new FileReader("weerbericht.txt");
+            buffer = new BufferedReader(file);
 
             //alle tekens inlezen tot aan eof 
             int gelezenTeken;
 
-            while ((gelezenTeken = file.read()) != -1) {
+            while ((gelezenTeken = buffer.read()) != -1) {
                 System.out.print((char) gelezenTeken);
             }
             System.out.println();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         } finally {
-            if (file != null) {
+            if (buffer != null) {
                 try {
-                    file.close();
+                    buffer.close();
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());
                 }
