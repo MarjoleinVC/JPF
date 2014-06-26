@@ -19,18 +19,38 @@ public class SerialVersionUID {
      */
     public static void main(String[] args) throws Exception {
         File file = new File("e:\\out.dat");
-        FileOutputStream fos = new FileOutputStream("out.dat");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        /*FileOutputStream fos = new FileOutputStream("out.dat");
+         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        TeSerialiseren SchrijfMeWeg = new TeSerialiseren(1);
-        oos.writeObject(SchrijfMeWeg);
-        oos.close();
-
+         TeSerialiseren SchrijfMeWeg = new TeSerialiseren(1);
+         oos.writeObject(SchrijfMeWeg);
+         oos.close();
+         
         FileInputStream fis = new FileInputStream("out.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
 
         TeSerialiseren dto = (TeSerialiseren) ois.readObject();
         System.out.println("Data:" + dto.getGetal());
-        ois.close();
+        ois.close();*/
+
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(file);
+            ois = new ObjectInputStream(fis);
+            TeSerialiseren dto = (TeSerialiseren) ois.readObject();
+            System.out.println("Data:" + dto.getBoolean());
+        } catch (InvalidClassException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            ois.close();
+        }
     }
 }
