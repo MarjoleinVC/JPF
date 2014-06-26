@@ -16,7 +16,7 @@ public class Werknemer implements Serializable {
 
     private String voornaam;
     private String familienaam;
-    private BigDecimal wedde;
+    private transient BigDecimal wedde;
 
     public Werknemer(String voornaam, String familienaam, BigDecimal wedde) {
         this.voornaam = voornaam;
