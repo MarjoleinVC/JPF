@@ -48,7 +48,7 @@ public class Cursus implements Comparable<Cursus> {
 
     @Override
     public String toString() {
-        return (cursusNr + "\t" + cursusNaam + "\t" + prijs);
+        return (cursusNr + " " + cursusNaam + " " + prijs);
     }
 
     @Override
