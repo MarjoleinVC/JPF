@@ -96,7 +96,7 @@ public class BankBediende {
         //printRekening2(woorden);
         print(woorden);
         
-        System.out.println();
+        System.out.println(); 
         //Alle collections tonen met de procedure print
         print(setRek);
         print(alRek);
