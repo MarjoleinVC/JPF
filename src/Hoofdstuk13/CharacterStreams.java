@@ -3,20 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Hoofdstuk13;
 
-/**
- *
- * @author marjolein.vancelst
- */
+import java.io.*;
+
 public class CharacterStreams {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        FileReader file = null;
+
+        //tekstbestand teken per teken inlezen en weergeven op het scherm
+        try {
+            //een nieuwe file aanmaken 
+            file = new FileReader("weerbericht.txt");
+
+            //alle tekens inlezen tot aan eof 
+            int gelezenTeken;
+
+            while ((gelezenTeken = file.read()) != -1) {
+                System.out.print((char) gelezenTeken);
+            }
+            System.out.println();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (file != null) {
+                try {
+                    file.close();
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
     }
-    
 }
