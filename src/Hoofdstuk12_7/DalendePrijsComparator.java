@@ -13,7 +13,7 @@ import java.util.Comparator;
  */
 public class DalendePrijsComparator implements Comparator<Cursus> {
     //toegevoegd aan Cursus.java aangezien niet algemeen gebruikt --> als (anonieme) inner class
-    /*@Override
+    @Override
     public int compare(Cursus c1, Cursus c2) {
         if (c1.compareTo(c2) == 0) {
             return 0;
