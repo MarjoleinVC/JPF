@@ -13,11 +13,17 @@ import java.io.Serializable;
  */
 public class TeSerialiseren implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
+
+    private boolean jaOfNee;
     private int bewaardGetal;
 
-    public TeSerialiseren(int getal) {
+    public TeSerialiseren(boolean janee, int getal, double getal2) {
         this.bewaardGetal = getal;
+    }
+
+    public boolean getBoolean() {
+        return jaOfNee;
     }
 
     public int getGetal() {
