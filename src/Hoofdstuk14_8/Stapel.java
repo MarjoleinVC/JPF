@@ -13,8 +13,11 @@ public class Stapel {
 
     private int aantalPannenkoeken;
 
-    synchronized public void voegPannenkoekenToe() {
-        ++aantalPannenkoeken;
+    public void voegPannenkoekenToe() {
+        System.out.println("Nog een pannenkoek");
+        synchronized (this) {
+            ++aantalPannenkoeken;
+        }
     }
 
     public int getAantalPannenkoeken() {
