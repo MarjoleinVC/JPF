@@ -1,4 +1,4 @@
-package Hoofdstuk8;
+package Hoofdstuk08;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

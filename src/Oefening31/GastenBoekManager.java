@@ -17,7 +17,7 @@ import java.io.ObjectOutputStream;
  */
 public class GastenBoekManager {
 
-    private static final String GASTENBOEK_PATH = "C:\\Users\\marjolein.vancelst\\Documents\\3. JPF\\JPFProjecten\\JPF\\src\\Oefening31\\gastenboek.dat";
+    private static final String GASTENBOEK_PATH = "C:\\Users\\marjolein.vancelst\\Documents\\3. JPF\\JPFProjecten\\JPF\\src\\Oefening31\\gastenBoek.dat";
 
     public void save(GastenBoek gastenboek) {
         try {

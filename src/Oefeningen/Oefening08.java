@@ -9,7 +9,7 @@ package Oefeningen;
  *
  * @author marjolein.vancelst
  */
-public class Oefening8 {
+public class Oefening08 {
 
     /**
      * @param args the command line arguments

@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author marjolein.vancelst
  */
-public class Oefening5_6 
+public class Oefening05_06 
 {
 
     /**
@@ -20,7 +20,7 @@ public class Oefening5_6
     public static void main(String[] args) 
     {
         // TODO code application logic here
-        // Oefening5_6
+        // Oefening05_06
         int[] getal;
         getal = new int[5];
         int sum = 0;

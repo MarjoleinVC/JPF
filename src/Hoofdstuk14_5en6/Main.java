@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Hoofdstuk14_5;
+package Hoofdstuk14_5en6;
 
 import java.util.Scanner;
 
