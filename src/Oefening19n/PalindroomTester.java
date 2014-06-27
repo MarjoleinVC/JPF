@@ -1,4 +1,4 @@
-package oefening19;
+package Oefening19n;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

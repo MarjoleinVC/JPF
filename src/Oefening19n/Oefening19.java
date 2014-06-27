@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package oefening19;
+package Oefening19n;
 import java.util.*;
 /**
  *
