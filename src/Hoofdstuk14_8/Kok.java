@@ -9,11 +9,11 @@ package Hoofdstuk14_8;
  *
  * @author marjolein.vancelst
  */
-public class Klok implements Runnable {
+public class Kok implements Runnable {
 
     private Stapel stapel;
 
-    public Klok(Stapel stapel) {
+    public Kok(Stapel stapel) {
         this.stapel = stapel;
     }
 
