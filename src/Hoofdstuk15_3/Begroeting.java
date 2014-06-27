@@ -18,6 +18,8 @@ public class Begroeting extends JFrame implements ActionListener {
     private JTextField tekstveld;
     private JLabel tekst, antwoord;
     private JButton knop;
+    private JPanel tekenen;
+    private Graphics g;
 
     public Begroeting() {
         setTitle("Welkom");
@@ -37,17 +39,27 @@ public class Begroeting extends JFrame implements ActionListener {
         tekstveld = new JTextField(20);
         knop = new JButton("Klik mij");
         antwoord = new JLabel();
+            /*JPanel paneel = new JPanel();
+            paneel.add(tekst);
+            paneel.add(tekstveld);
+            add(paneel);*/
         add(tekst);
         add(tekstveld);
         add(knop);
         add(antwoord);
+        
+        tekenen = new JPanel();
+        tekenen.setPreferredSize(new Dimension(350,50));
+        add(tekenen);
+        
         knop.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         String t = " Welkom bij ons " + tekstveld.getText();
-        antwoord.setText(t);
-        pack();
+        antwoord.setText( t);
+        g = tekenen.getGraphics();
+        g.drawString("Er is op de knop geklikt", 30, 10);
     }
 }
